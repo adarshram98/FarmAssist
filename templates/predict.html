@@ -1,0 +1,45 @@
+{% extends "layout.html"%}
+{% block body%}
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Crop Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="nitro_value" placeholder="Nitrogen Value" required="required" /><br/><br/>
+        <input type="text" name="phos_value" placeholder="Phosphorous Value" required="required" /><br/><br/>
+		<input type="text" name="pot_value" placeholder="Potassium value" required="required" /><br/><br/>
+        <input type="text" name="zin_value" placeholder="Zinc Value" required="required" /><br/><br/>
+        <input type="text" name="iron_value" placeholder="Iron Value" required="required" /><br/><br/>
+        <input type="text" name="copper_value" placeholder="Copper value" required="required" /><br/><br/>
+        <input type="text" name="man_value" placeholder="Manganese Value" required="required" /><br/><br/>
+        <input type="text" name="bo_value" placeholder="Boron Value" required="required" /><br/><br/>
+        <input type="text" name="ph" placeholder="pH Value" required="required" /><br/><br/>
+        <input type="text" name="ec" placeholder="EC Value" required="required" /><br/><br/>
+        <input type="text" name="oc" placeholder="OC Value" required="required" /><br/><br/>
+        <button type="submit" class="btn btn-primary ">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ {% endblock %}
+
+</body>
+</html>

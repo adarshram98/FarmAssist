@@ -1,0 +1,27 @@
+{% extends "layout.html"%}
+{% block body%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<body>
+<div class="card text-center" >
+   <p> PREDICT</p>
+  <div >
+    <h5 class="card-title"  >WHAT TO GROW?</h5>
+    <p class="card-text">HELP ME TO PREDICT THE BEST CROP BASED ON MY DETAILS</p>
+    <form action="http://localhost:5000/predict" method='POST'>
+    <input type="text" name="nitro_value" placeholder="Nitrogen Value" required="required" /><br/><br/>
+    <input type="text" name="phos_value" placeholder="Phosphorous Value" required="required" /><br/><br/>
+    <input type="text" name="pot_value" placeholder="Potassium value" required="required" /><br/><br/>
+    <input type="text" name="zin_value" placeholder="Zinc Value" required="required" /><br/><br/>
+    <input type="text" name="iron_value" placeholder="Iron Value" required="required" /><br/><br/>
+    <input type="text" name="copper_value" placeholder="Copper value" required="required" /><br/><br/>
+    <input type="text" name="man_value" placeholder="Manganese Value" required="required" /><br/><br/>
+    <input type="text" name="bo_value" placeholder="Boron Value" required="required" /><br/><br/>
+    <input type="text" name="ph" placeholder="pH Value" required="required" /><br/><br/>
+    <input type="text" name="ec" placeholder="EC Value" required="required" /><br/><br/>
+    <input type="text" name="oc" placeholder="OC Value" required="required" /><br/><br/>
+    <button class="btn btn-primary" type="submit" >PREDICT</button>
+  </form>
+  </div>
+  
+</body>
+{% endblock %}

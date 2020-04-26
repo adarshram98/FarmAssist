@@ -1,0 +1,7 @@
+model = pickle.load(open('crop.pkl', 'rb'))
+int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
+
+    output = round(prediction[0], 10)
+,prediction_text='Best Crop that can be grown is $ {}'.format(output)
