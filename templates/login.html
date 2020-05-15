@@ -1,8 +1,18 @@
 {% extends "layout.html"%}
 {% block body%}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<head>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/spacelab/bootstrap.min.css"> -->
+<style>
+    .container{
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+</style>
+</head>
 <body>
-    
+    <div class="container">
+<!--     
 <div class="login">
     <h1>LOGIN</h1>
     <form action="" method="POST">
@@ -14,6 +24,33 @@
             </div>
             <button class="btn btn-primary" type="submit" >SUBMIT</button>
     </form>
+</div>
+<div > -->
+    <div class="card border-primary mb-2" style="max-width: 40rem;">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <!-- <div class="form-group has-success">
+          <label class="form-control-label" for="inputSuccess1">UserName</label>
+          <input type="text" value="enter username" class="form-control is-valid" id="inputValid" />
+        </div>
+        <div class="form-group has-success">
+          <label class="form-control-label" for="inputSuccess1">Password</label>
+          <input type="password"  class="form-control is-valid" id="inputValid" />
+        </div>
+  
+         <button class="btn btn-primary" type="submit">Submit</button> -->
+         <form action="" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="name" required>
+            </div>
+            <div class="form-group">
+                    <input type="password" name="password" class="form-control" placeholder="password" required>
+                </div>
+                <button class="btn btn-primary" type="submit" >SUBMIT</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 </body>
 {% endblock %}

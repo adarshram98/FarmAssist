@@ -1,7 +1,7 @@
 from flask import flash,Flask,render_template,request,session,logging,url_for,redirect
 from passlib.hash import sha256_crypt
 from sklearn.externals import joblib
-import pandas as pd
+import pandas as pd 
 import numpy as np
 import csv
 from prettytable import PrettyTable
@@ -22,7 +22,7 @@ def login():
         username = request.form.get("name")
         password=request.form.get("password")
         
-        if (username!=user and password!=pwd):
+        if (username!=user or password!=pwd):
             flash("You are not authenticated",category='error')
             return render_template("login.html")
         else:
@@ -60,9 +60,33 @@ def predict():
     output = round(prediction[0], 10)
     
     session["log"]=True
-    return render_template('new.html',prediction_text ='Best Crop that can be grown is  {}'.format(output))
+    #return render_template('new.html',prediction_text ='Best Crop that can be grown is  {}'.format(output))
     
-    
+    if output == 1:
+        return render_template("Wheat.html")
+    elif output == 2:
+        return render_template("Rice.html")
+    elif output == 3:
+        return render_template("Corn.html")
+    elif output == 4:
+        return render_template("Corn.html")
+    elif output == 5:
+        return render_template("Corn.html")
+    elif output == 6:
+        return render_template("Corn.html")
+    elif output == 7:
+        return render_template("Corn.html")
+    elif output == 8:
+        return render_template("Corn.html")
+    elif output == 9:
+        return render_template("Corn.html")
+    elif output == 10:
+        return render_template("Corn.html")   
+    elif output == 11:
+        return render_template("Corn.html") 
+    elif output == 12:
+        return render_template("Corn.html") 
+
 
 if __name__ == "__main__":
     app.secret_key="finalyearproject"

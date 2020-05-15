@@ -1,8 +1,24 @@
  {% extends "layout.html"%}
 {% block body%}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/superhero/bootstrap.min.css">
 <body>
-  <h2>WELCOME TO OUR INTERFACE</h2>
- <image src="{{ url_for('static',filename='images/home2.jpg')}}">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-1">Welcome!</h1>
+      <span class="font-bold">
+        <span class="font-italic">
+          <span class="lead">
+            <h3>"KRISHI TOH NAASTHI DURBIKSHAM"</h3>
+          </span>
+        </span>
+      </span>
+
+      <hr class="my-3" />
+      <p>Submit Your Soil Health Card Details and Get Instant Assistance</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>
+      </p>
+    </div>
+  </div>
 </body>
 {% endblock %}
